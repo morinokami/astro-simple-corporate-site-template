@@ -2,12 +2,17 @@
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import Sheet from '../../components/Sheet.astro';
+import NewsList from '../../components/NewsList.astro';
+import { getNewsList } from '../../lib/microcms';
+import { NEWS_LIST_LIMIT } from '../../constants';
+
+const data = await getNewsList({ limit: NEWS_LIST_LIMIT });
 ---
 
 <Layout title="ニュース｜シンプルなコーポレートサイト">
   <Hero title="News" sub="ニュース" />
   <Sheet>
-    <!-- TODO: <NewsList articles={data.contents} />
-    <Pagination totalCount={data.totalCount} basePath="/news" /> -->
+    <NewsList articles={data.contents} />
+    <!-- TODO: <Pagination totalCount={data.totalCount} basePath="/news" /> -->
   </Sheet>
 </Layout>
