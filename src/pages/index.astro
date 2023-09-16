@@ -1,7 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import ButtonLink from "../components/ButtonLink.astro";
 import imgMv from "../images/img-mv.jpg";
+import imgBusiness from "../images/img-business.png";
+import imgAboutUs from "../images/img-aboutus.jpg";
+import imgHiring from "../images/img-hiring.jpg";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -13,6 +17,101 @@ import imgMv from "../images/img-mv.jpg";
       </p>
     </div>
     <Image class="bgimg" src={imgMv} alt="" width={3600} height={1200} />
+  </section>
+  <section class="news">
+    <h2 class="newsTitle">News</h2>
+    <!-- TODO: <NewsList articles={data.contents} />
+    <div class="newsLink">
+      <ButtonLink href="/news">もっとみる</ButtonLink>
+    </div> -->
+  </section>
+  <section class="section">
+    <div class="horizontal">
+      <div>
+        <h2 class="sectionTitleEn">Business</h2>
+        <p class="sectionTitleJa">事業内容</p>
+        <p class="sectionDescription">
+          当社は、次世代テクノロジーの研究開発・製造・販売を行う革新的な企業です。
+
+
+          <br />
+           AI、ロボット工学、自律システムなど、幅広い分野でのソリューション提供を通じて、社会の進化と未来の創造に貢献します。
+        </p>
+        <ButtonLink href="/business">もっとみる</ButtonLink>
+      </div>
+      <Image
+        class="businessImg"
+        src={imgBusiness}
+        alt=""
+        width={1024}
+        height={1024}
+      />
+    </div>
+  </section>
+  <div class="aboutus">
+    <section class="section">
+      <div class="horizontal">
+        <Image
+          class="aboutusImg"
+          src={imgAboutUs}
+          alt=""
+          width={6000}
+          height={4000}
+        />
+        <div>
+          <h2 class="sectionTitleEn">About Us</h2>
+          <p class="sectionTitleJa">私たちについて</p>
+          <p class="sectionDescription">
+            「テクノロジーの力で世界を変える」をミッションに掲げ、日々活動をしています。
+          </p>
+          <dl class="info">
+            <dt class="infoTitle">社名</dt>
+            <dd class="infoDescription">株式会社Simple</dd>
+          </dl>
+          <dl class="info">
+            <dt class="infoTitle">設立</dt>
+            <dd class="infoDescription">2023年4月</dd>
+          </dl>
+          <dl class="info">
+            <dt class="infoTitle">所在地</dt>
+            <dd class="infoDescription">
+              〒000-0000
+              <br />
+               東京都渋谷区渋谷1-1-1
+            </dd>
+          </dl>
+          <dl class="info">
+            <dt class="infoTitle">代表者</dt>
+            <dd class="infoDescription">鈴木 太郎</dd>
+          </dl>
+          <dl class="info">
+            <dt class="infoTitle">資本金</dt>
+            <dd class="infoDescription">1,000万円</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="section">
+    <div class="horizontal">
+      <div>
+        <h2 class="sectionTitleEn">We are hiring</h2>
+        <p class="sectionTitleJa">採用情報</p>
+        <p class="sectionDescription">
+          当社では、チャレンジ精神を持った人材を求めています。
+          <br />
+           新しいアイデアを出し合い、成長する環境で活躍したい方は、ぜひご応募ください。当社でのキャリアを築きながら、技術の最前線で力を発揮しましょう。
+        </p>
+        <ButtonLink href="">採用情報へ</ButtonLink>
+      </div>
+      <Image
+        class="hiringImg"
+        src={imgHiring}
+        alt=""
+        width={960}
+        height={960}
+      />
+    </div>
   </section>
 </Layout>
 
