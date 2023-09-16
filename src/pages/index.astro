@@ -6,6 +6,11 @@ import imgMv from '../images/img-mv.jpg';
 import imgBusiness from '../images/img-business.png';
 import imgAboutUs from '../images/img-aboutus.jpg';
 import imgHiring from '../images/img-hiring.jpg';
+import { getNewsList } from '../lib/microcms';
+import { TOP_NEWS_LIMIT } from '../constants';
+import NewsList from '../components/NewsList.astro';
+
+const data = await getNewsList({ limit: TOP_NEWS_LIMIT });
 ---
 
 <Layout title="シンプルなコーポレートサイト">
@@ -18,10 +23,10 @@ import imgHiring from '../images/img-hiring.jpg';
   </section>
   <section class="news">
     <h2 class="newsTitle">News</h2>
-    <!-- TODO: <NewsList articles={data.contents} />
+    <NewsList articles={data.contents} />
     <div class="newsLink">
       <ButtonLink href="/news">もっとみる</ButtonLink>
-    </div> -->
+    </div>
   </section>
   <section class="section">
     <div class="horizontal">
