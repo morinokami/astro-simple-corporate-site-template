@@ -6,6 +6,7 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://astro-simple-corporate-site-template.vercel.app',
   output: 'hybrid',
   adapter: vercel(),
   image: {

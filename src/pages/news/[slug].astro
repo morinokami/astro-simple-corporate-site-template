@@ -26,8 +26,11 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { data } = Astro.props;
 ---
 
-<!-- TODO: meta -->
-<Layout title={data.title}>
+<Layout
+  title={data.title}
+  description={data.description}
+  openGraph={{ title: data.title, description: data.description, image: data.thumbnail?.url ?? '' }}
+>
   <Hero title="News" sub="ニュース" />
   <Sheet>
     <Article data={data} />
