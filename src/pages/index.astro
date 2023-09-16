@@ -1,29 +1,20 @@
 ---
-import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
-import ButtonLink from "../components/ButtonLink.astro";
-import imgMv from "../images/img-mv.jpg";
-import imgBusiness from "../images/img-business.png";
-import imgAboutUs from "../images/img-aboutus.jpg";
-import imgHiring from "../images/img-hiring.jpg";
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import ButtonLink from '../components/ButtonLink.astro';
+import imgMv from '../images/img-mv.jpg';
+import imgBusiness from '../images/img-business.png';
+import imgAboutUs from '../images/img-aboutus.jpg';
+import imgHiring from '../images/img-hiring.jpg';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="シンプルなコーポレートサイト">
   <section class="top">
     <div>
       <h1 class="title">テクノロジーの力で世界を変える</h1>
-      <p class="description">
-        私たちは市場をリードしているグローバルテックカンパニーです。
-      </p>
+      <p class="description">私たちは市場をリードしているグローバルテックカンパニーです。</p>
     </div>
-    <Image
-      class="bgimg"
-      src={imgMv}
-      alt=""
-      width={3600}
-      height={1200}
-      loading="eager"
-    />
+    <Image class="bgimg" src={imgMv} alt="" width={3600} height={1200} loading="eager" />
   </section>
   <section class="news">
     <h2 class="newsTitle">News</h2>
@@ -39,32 +30,18 @@ import imgHiring from "../images/img-hiring.jpg";
         <p class="sectionTitleJa">事業内容</p>
         <p class="sectionDescription">
           当社は、次世代テクノロジーの研究開発・製造・販売を行う革新的な企業です。
-
-
           <br />
            AI、ロボット工学、自律システムなど、幅広い分野でのソリューション提供を通じて、社会の進化と未来の創造に貢献します。
         </p>
         <ButtonLink href="/business">もっとみる</ButtonLink>
       </div>
-      <Image
-        class="businessImg"
-        src={imgBusiness}
-        alt=""
-        width={1024}
-        height={1024}
-      />
+      <Image class="businessImg" src={imgBusiness} alt="" width={1024} height={1024} />
     </div>
   </section>
   <div class="aboutus">
     <section class="section">
       <div class="horizontal">
-        <Image
-          class="aboutusImg"
-          src={imgAboutUs}
-          alt=""
-          width={6000}
-          height={4000}
-        />
+        <Image class="aboutusImg" src={imgAboutUs} alt="" width={6000} height={4000} />
         <div>
           <h2 class="sectionTitleEn">About Us</h2>
           <p class="sectionTitleJa">私たちについて</p>
@@ -111,13 +88,7 @@ import imgHiring from "../images/img-hiring.jpg";
         </p>
         <ButtonLink href="">採用情報へ</ButtonLink>
       </div>
-      <Image
-        class="hiringImg"
-        src={imgHiring}
-        alt=""
-        width={960}
-        height={960}
-      />
+      <Image class="hiringImg" src={imgHiring} alt="" width={960} height={960} />
     </div>
   </section>
 </Layout>
@@ -197,7 +168,7 @@ import imgHiring from "../images/img-hiring.jpg";
   }
 
   .sectionTitleJa::before {
-    content: "";
+    content: '';
     display: block;
     height: 1px;
     width: 40px;
@@ -227,7 +198,7 @@ import imgHiring from "../images/img-hiring.jpg";
     border-radius: var(--border-radius);
     width: 300px;
     background:
-      url("/arrow-right.svg") no-repeat right 20px center,
+      url('/arrow-right.svg') no-repeat right 20px center,
       var(--color-button-primary);
     color: var(--color-text-unpainted);
   }
@@ -333,7 +304,7 @@ import imgHiring from "../images/img-hiring.jpg";
     }
 
     .sectionTitleJa::before {
-      content: "";
+      content: '';
       display: block;
       height: 1px;
       width: 40px;
@@ -372,7 +343,7 @@ import imgHiring from "../images/img-hiring.jpg";
       border-radius: var(--border-radius);
       width: 100%;
       background:
-        url("/arrow-right.svg") no-repeat right 20px center,
+        url('/arrow-right.svg') no-repeat right 20px center,
         var(--color-button-primary);
       color: var(--color-text-unpainted);
     }
