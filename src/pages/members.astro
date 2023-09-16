@@ -1,18 +1,47 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Sheet from '../components/Sheet.astro';
 import ButtonLink from '../components/ButtonLink.astro';
+import { getMembersList } from '../lib/microcms';
+
+const data = await getMembersList();
 ---
 
 <Layout title="メンバー｜シンプルなコーポレートサイト">
   <Hero title="Members" sub="メンバー" />
   <Sheet>
-    TODO: メンバー一覧
-    <div class="footer">
-      <h2 class="message">We are hiring</h2>
-      <p>私たちは共にチャレンジする仲間を募集しています。</p>
-      <ButtonLink href="">採用情報へ</ButtonLink>
+    <div class="container">
+      {
+        data.contents.length === 0 ? (
+          <p class="empty">メンバーが登録されていません。</p>
+        ) : (
+          <ul>
+            {data.contents.map((member) => (
+              <li class="list">
+                <Image
+                  src={member.image?.url as string}
+                  alt=""
+                  width={member.image?.width as number}
+                  height={member.image?.height as number}
+                  class="image"
+                />
+                <dl>
+                  <dt class="name">{member.name}</dt>
+                  <dd class="position">{member.position}</dd>
+                  <dd class="profile">{member.profile}</dd>
+                </dl>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      <div class="footer">
+        <h2 class="message">We are hiring</h2>
+        <p>私たちは共にチャレンジする仲間を募集しています。</p>
+        <ButtonLink href="">採用情報へ</ButtonLink>
+      </div>
     </div>
   </Sheet>
 </Layout>

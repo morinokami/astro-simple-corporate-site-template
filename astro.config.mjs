@@ -8,6 +8,9 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 export default defineConfig({
   output: 'hybrid',
   adapter: cloudflare(),
+  image: {
+    domains: ['images.microcms-assets.io'],
+  },
   integrations: [react()],
   vite: {
     plugins: [vanillaExtractPlugin()],
