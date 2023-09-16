@@ -13,12 +13,6 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<style>
-  .body {
-    background-color: #f9f9f9;
-  }
-</style>
-
 <html lang="ja">
   <head>
     <!-- TODO: meta -->
@@ -30,7 +24,7 @@ const { title } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="body">
+  <body class="body" style="background-color: #f9f9f9;">
     <Header />
     <slot />
     <Footer />
