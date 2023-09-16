@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import Menu from "./Menu.astro";
+import logo from "../images/logo.svg";
+---
+
+<header class="header">
+  <a href="/" class="logoLink">
+    <Image src={logo} alt="SIMPLE" class="logo" width={348} height={133} />
+  </a>
+  <Menu />
+</header>
+
+<style>
+  .header {
+    position: absolute;
+    padding: 16px 24px 8px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .logoLink {
+    display: flex;
+  }
+
+  .logo {
+    height: 24px;
+    width: auto;
+  }
+
+  @media (max-width: 640px) {
+    .header {
+      padding: 24px 16px 8px;
+    }
+  }
+</style>
