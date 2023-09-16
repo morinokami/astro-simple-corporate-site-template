@@ -15,7 +15,14 @@ const { title, sub } = Astro.props;
     <h1 class="title">{title}</h1>
     <p class="sub">{sub}</p>
   </div>
-  <Image class="bgimg" src={imgMv} alt="" width={4000} height={1200} />
+  <Image
+    class="bgimg"
+    src={imgMv}
+    alt=""
+    width={4000}
+    height={1200}
+    loading="eager"
+  />
 </section>
 
 <style>
