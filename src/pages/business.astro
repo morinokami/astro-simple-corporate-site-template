@@ -1,18 +1,59 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Sheet from '../components/Sheet.astro';
 import ButtonLink from '../components/ButtonLink.astro';
+import { getBusinessList } from '../lib/microcms';
+
+const data = await getBusinessList();
 ---
 
 <Layout title="事業内容｜シンプルなコーポレートサイト">
   <Hero title="Business" sub="事業内容" />
   <Sheet>
-    TODO: 事業内容
-    <div class="footer">
-      <h2 class="message">We are hiring</h2>
-      <p>私たちは共にチャレンジする仲間を募集しています。</p>
-      <ButtonLink href="">採用情報へ</ButtonLink>
+    <div class="container">
+      {
+        data.contents.length === 0 ? (
+          <p class="empty">事業内容が登録されていません。</p>
+        ) : (
+          <ul>
+            {data.contents.map((business) => (
+              <li class="list">
+                <dl class="flex">
+                  <dt class="name">
+                    <Image
+                      src={business.logo?.url as string}
+                      alt=""
+                      width={business.logo?.width as number}
+                      height={business.logo?.height as number}
+                      class="logo"
+                    />
+                  </dt>
+                  <dd class="description">{business.description}</dd>
+                  <dd class="action">
+                    <ButtonLink href={business.link} isExternal>
+                      サービスサイトへ
+                    </ButtonLink>
+                  </dd>
+                </dl>
+                <Image
+                  src={business.image?.url as string}
+                  alt=""
+                  width={business.image?.width as number}
+                  height={business.image?.height as number}
+                  class="image"
+                />
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      <div class="footer">
+        <h2 class="message">We are hiring</h2>
+        <p>私たちは共にチャレンジする仲間を募集しています。</p>
+        <ButtonLink href="">採用情報へ</ButtonLink>
+      </div>
     </div>
   </Sheet>
 </Layout>
