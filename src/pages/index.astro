@@ -1,14 +1,14 @@
 ---
 import { Image } from 'astro:assets';
-import Layout from '../layouts/Layout.astro';
-import ButtonLink from '../components/ButtonLink.astro';
-import imgMv from '../images/img-mv.jpg';
-import imgBusiness from '../images/img-business.png';
-import imgAboutUs from '../images/img-aboutus.jpg';
-import imgHiring from '../images/img-hiring.jpg';
-import { getNewsList } from '../lib/microcms';
-import { TOP_NEWS_LIMIT } from '../constants';
-import NewsList from '../components/NewsList.astro';
+import Layout from '@layouts/Layout.astro';
+import ButtonLink from '@components/ButtonLink.astro';
+import imgMv from '@images/img-mv.jpg';
+import imgBusiness from '@images/img-business.png';
+import imgAboutUs from '@images/img-aboutus.jpg';
+import imgHiring from '@images/img-hiring.jpg';
+import { getNewsList } from '@lib/microcms';
+import { TOP_NEWS_LIMIT } from '@constants/index';
+import NewsList from '@components/NewsList.astro';
 
 const data = await getNewsList({ limit: TOP_NEWS_LIMIT });
 ---

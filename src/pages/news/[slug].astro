@@ -1,11 +1,11 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Hero from '../../components/Hero.astro';
-import Sheet from '../../components/Sheet.astro';
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/Hero.astro';
+import Sheet from '@components/Sheet.astro';
 import type { InferGetStaticPropsType } from 'astro';
-import { getNewsList } from '../../lib/microcms';
-import Article from '../../components/Article.astro';
-import ButtonLink from '../../components/ButtonLink.astro';
+import { getNewsList } from '@lib/microcms';
+import Article from '@components/Article.astro';
+import ButtonLink from '@components/ButtonLink.astro';
 
 export async function getStaticPaths() {
   const data = await getNewsList();

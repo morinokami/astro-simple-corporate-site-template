@@ -1,10 +1,10 @@
 ---
 import { Image } from 'astro:assets';
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Sheet from '../components/Sheet.astro';
-import ButtonLink from '../components/ButtonLink.astro';
-import { getMembersList } from '../lib/microcms';
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/Hero.astro';
+import Sheet from '@components/Sheet.astro';
+import ButtonLink from '@components/ButtonLink.astro';
+import { getMembersList } from '@lib/microcms';
 
 const data = await getMembersList();
 ---
