@@ -1,10 +1,10 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import Hero from '@components/Hero.astro';
-import Sheet from '@components/Sheet.astro';
-import NewsList from '@components/NewsList.astro';
-import { getNewsList } from '@lib/microcms';
-import { NEWS_LIST_LIMIT } from '@constants/index';
+import Hero from '@/components/Hero.astro';
+import NewsList from '@/components/NewsList.astro';
+import Sheet from '@/components/Sheet.astro';
+import { NEWS_LIST_LIMIT } from '@/constants/index';
+import Layout from '@/layouts/Layout.astro';
+import { getNewsList } from '@/lib/microcms';
 
 const data = await getNewsList({ limit: NEWS_LIST_LIMIT });
 ---

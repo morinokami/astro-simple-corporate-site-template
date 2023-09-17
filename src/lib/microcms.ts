@@ -1,10 +1,10 @@
-import { createClient } from 'microcms-js-sdk';
 import type {
-  MicroCMSQueries,
-  MicroCMSImage,
-  MicroCMSDate,
   MicroCMSContentId,
+  MicroCMSDate,
+  MicroCMSImage,
+  MicroCMSQueries,
 } from 'microcms-js-sdk';
+import { createClient } from 'microcms-js-sdk';
 
 // カテゴリーの型定義
 export type Category = {

@@ -1,9 +1,11 @@
 ---
 import { Image } from 'astro:assets';
-import { formatRichText } from '@lib/utils';
-import type { Article } from '@lib/microcms';
-import PublishedDate from './PublishedDate.astro';
+
+import type { Article } from '@/lib/microcms';
+import { formatRichText } from '@/lib/utils';
+
 import Category from './Category.astro';
+import PublishedDate from './PublishedDate.astro';
 
 interface Props {
   data: Article;
